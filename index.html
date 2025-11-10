@@ -43,7 +43,7 @@
     }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <style>
@@ -53,15 +53,14 @@
     .glow { box-shadow: 0 0 20px rgba(0, 255, 157, 0.4); }
     .fade-animate { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
     .fade-in { opacity: 1 !important; transform: translateY(0) !important; }
+    .article-card { transition: all 0.3s ease; background: rgba(22, 27, 34, 0.8); border: 1px solid rgba(0, 255, 157, 0.1); }
+    .article-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0, 255, 157, 0.2); border-color: rgba(0, 255, 157, 0.3); }
   </style>
 </head>
 <body class="bg-dark text-gray-100 min-h-screen font-sans overflow-x-hidden">
 
   <div id="particles-js"></div>
   <div id="packet-layer"></div>
-
-
-  
 
   <nav class="fixed top-0 w-full bg-dark/95 backdrop-blur-sm border-b border-primary/20 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,15 +76,11 @@
       </div>
   </div>
 </nav>
-
-
-
-
-        
         <div class="hidden md:flex space-x-8">
           <a href="#home" class="hover:text-primary transition">Home</a>
           <a href="#about" class="hover:text-primary transition">About</a>
           <a href="#skills" class="hover:text-primary transition">Skills</a>
+          <a href="#articles" class="hover:text-primary transition">Articles</a>
           <a href="#experience" class="hover:text-primary transition">Experience</a>
           <a href="#achievements" class="hover:text-primary transition">Achievements</a>
           <a href="#education" class="hover:text-primary transition">Education</a>
@@ -103,6 +98,7 @@
         <a href="#home" class="block px-3 py-2 hover:text-primary">Home</a>
         <a href="#about" class="block px-3 py-2 hover:text-primary">About</a>
         <a href="#skills" class="block px-3 py-2 hover:text-primary">Skills</a>
+        <a href="#articles" class="block px-3 py-2 hover:text-primary">Articles</a>
         <a href="#experience" class="block px-3 py-2 hover:text-primary">Experience</a>
         <a href="#achievements" class="block px-3 py-2 hover:text-primary">Achievements</a>
         <a href="#education" class="block px-3 py-2 hover:text-primary">Education</a>
@@ -132,14 +128,20 @@
           <span class="text-primary font-mono">CCNA Certified</span>
         </div>
       </div>
-      <div class="flex justify-center gap-4">
+      <div class="flex flex-wrap justify-center gap-4">
         <a href="#contact" class="bg-primary text-dark px-8 py-3 rounded-full font-bold hover:bg-accent transition glow">Get Support</a>
         <a href="#experience" class="border border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-dark transition">View Experience</a>
+        <a href="cv.pdf" download class="border border-accent text-accent px-8 py-3 rounded-full font-bold hover:bg-accent hover:text-dark transition flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+          </svg>
+          Download CV
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="about" class="py-20 px-6 bg-card fade-animate">
+ <section id="about" class="py-20 px-6 bg-card fade-animate">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">About Me</h2>
       <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -157,7 +159,15 @@
           <p class="text-lg leading-relaxed">
             My commitment is to delivering high-quality, stable IT solutions, and I am continuously developing my expertise, backed by CCNA certifications.
           </p>
-          <a href="#contact" class="mt-6 inline-block bg-primary text-dark px-6 py-3 rounded-full font-bold hover:bg-accent transition glow text-md">Let's Connect</a>
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a href="#contact" class="bg-primary text-dark px-6 py-3 rounded-full font-bold hover:bg-accent transition glow text-md">Let's Connect</a>
+            <a href="cv.pdf" download class="border border-accent text-accent px-6 py-3 rounded-full font-bold hover:bg-accent hover:text-dark transition flex items-center gap-2 text-md">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+              </svg>
+              Download CV
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -167,7 +177,6 @@
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-4xl md:text-5xl font-bold mb-16 text-primary">Core Technical Skills</h2>
       <div class="grid md:grid-cols-4 gap-8">
-
         <div class="bg-card/80 p-8 rounded-xl border-t-4 border-primary shadow-lg hover:shadow-primary/30 transition duration-300">
           <h3 class="text-2xl font-semibold mb-4 text-accent">Servers & OS</h3>
           <ul class="text-left space-y-2 text-gray-300">
@@ -177,7 +186,6 @@
             <li>System Installation</li>
           </ul>
         </div>
-
         <div class="bg-card/80 p-8 rounded-xl border-t-4 border-accent shadow-lg hover:shadow-accent/30 transition duration-300">
           <h3 class="text-2xl font-semibold mb-4 text-accent">Networking & Infra</h3>
           <ul class="text-left space-y-2 text-gray-300">
@@ -187,7 +195,6 @@
             <li>Firewall Configuration</li>
           </ul>
         </div>
-
         <div class="bg-card/80 p-8 rounded-xl border-t-4 border-primary shadow-lg hover:shadow-primary/30 transition duration-300">
           <h3 class="text-2xl font-semibold mb-4 text-accent">Virtualization & Cloud</h3>
           <ul class="text-left space-y-2 text-gray-300">
@@ -196,7 +203,6 @@
             <li>Data Backup & Recovery</li>
           </ul>
         </div>
-
         <div class="bg-card/80 p-8 rounded-xl border-t-4 border-accent shadow-lg hover:shadow-accent/30 transition duration-300">
           <h3 class="text-2xl font-semibold mb-4 text-accent">IT Operations</h3>
           <ul class="text-left space-y-2 text-gray-300">
@@ -206,7 +212,91 @@
             <li>Documentation</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- UPDATED MEDIUM ARTICLES SECTION WITH YOUR ACTUAL ARTICLES -->
+  <section id="articles" class="py-20 px-6 bg-dark/80 fade-animate">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-primary">Technical Articles</h2>
+      <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+        Sharing insights on IT support, network administration, and cybersecurity. Click any article to read on Medium.
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Article 1: VMware Snapshots -->
+        <div class="article-card p-6 rounded-xl group">
+          <div class="h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center border border-primary/30">
+            <svg class="w-16 h-16 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m2-4h.01M17 16h.01"></path>
+            </svg>
+          </div>
+          <div class="text-sm text-accent mb-2">Virtualization • 6 min read</div>
+          <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-primary transition">VMware Snapshot Best Practices for Production Environments</h3>
+          <p class="text-gray-400 mb-4 text-sm leading-relaxed">Understanding when and how to use snapshots effectively without risking production stability and performance...</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-500">Dec 2024</span>
+            <a href="https://medium.com/@networkexpert047/vmware-snapshot-best-practices-for-production-environments-32b2f9e45040" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accent transition text-sm font-medium flex items-center gap-1">
+              Read on Medium 
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Article 2: Active Directory -->
+        <div class="article-card p-6 rounded-xl group">
+          <div class="h-48 bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg mb-4 flex items-center justify-center border border-accent/30">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <div class="text-sm text-accent mb-2">Network Administration • 5 min read</div>
+          <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-accent transition">Troubleshooting Active Directory Replication Issues</h3>
+          <p class="text-gray-400 mb-4 text-sm leading-relaxed">A practical guide to diagnosing and resolving common AD replication failures in enterprise environments...</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-500">Nov 2024</span>
+            <a href="https://medium.com/@networkexpert047/troubleshooting-active-directory-replication-issues-425bea203ebd" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accent transition text-sm font-medium flex items-center gap-1">
+              Read on Medium 
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Article 3: Firewall Rules -->
+        <div class="article-card p-6 rounded-xl group">
+          <div class="h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center border border-primary/30">
+            <svg class="w-16 h-16 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <div class="text-sm text-accent mb-2">Cybersecurity • 7 min read</div>
+          <h3 class="text-xl font-semibold mb-3 text-white group-hover:text-primary transition">Essential Firewall Rules for Small Business Networks</h3>
+          <p class="text-gray-400 mb-4 text-sm leading-relaxed">Implementing effective firewall policies doesn't have to be complicated. Here's a practical approach...</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-500">Oct 2024</span>
+            <a href="https://medium.com/@networkexpert047/essential-firewall-rules-for-small-business-networks-3e9d4fa0338d" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accent transition text-sm font-medium flex items-center gap-1">
+              Read on Medium 
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Articles Button -->
+      <div class="text-center mt-12">
+        <a href="https://medium.com/@networkexpert047" target="_blank" rel="noopener noreferrer" class="bg-primary text-dark px-8 py-3 rounded-full font-bold hover:bg-accent transition glow inline-flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052v-10.608z"/>
+          </svg>
+          View All on Medium
+        </a>
       </div>
     </div>
   </section>
@@ -283,7 +373,6 @@
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-4xl md:text-5xl font-bold mb-12 text-primary">Education & Certifications</h2>
       <div class="grid md:grid-cols-2 gap-8 text-left">
-        
         <div class="bg-dark/80 p-6 rounded-xl border-t-4 border-accent shadow-xl">
           <h3 class="text-2xl font-semibold mb-2 text-accent">Education</h3>
           <p class="text-xl font-medium text-gray-100">Bachelor of Science in Information Technology</p>
@@ -298,12 +387,10 @@
             <li><span class="font-medium text-primary">CCNA</span> Cybersecurity Certificate</li>
           </ul>
         </div>
-        
       </div>
       <p class="mt-8 text-lg text-gray-400">Fluent in: Urdu, Punjabi. Intermediate English proficiency.</p>
     </div>
   </section>
-
 
   <section id="contact" class="py-20 px-6 bg-card fade-animate">
     <div class="max-w-4xl mx-auto text-center">
@@ -318,7 +405,8 @@
       </form>
       
       <div class="mt-12 flex justify-center gap-6 text-3xl">
-        <a href="https://www.linkedin.com/in/muhammad-awais-68ab94384" target="_blank" class="text-primary hover:text-accent transition">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/muhammad-awais-68ab94384" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accent transition">LinkedIn</a>
+        <a href="https://medium.com/@networkexpert047" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accent transition">Medium</a>
         <a href="mailto:networkexpert047@gmail.com" class="text-primary hover:text-accent transition">Email</a>
         <a href="tel:+923109277471" class="text-primary hover:text-accent transition">Call</a>
       </div>
